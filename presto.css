@@ -1,0 +1,92 @@
+
+/* palette di colori */
+:root{
+
+--primo : #1c85b5;
+--secondo :rgb(71, 155, 189);
+--terzo : #2f627c;
+--blackC :#030d11;
+--whiteC : rgb(192, 225, 238);
+}
+
+
+.background-primo{
+    background-color: var(--primo);
+}
+.background-secondo{
+    background-color: var(--secondo);
+}
+.background-terzo{
+    background-color: var(--terzo);
+}
+.background-blackC{
+    background-color: var(--blackC);
+}
+.background-whiteC{
+    background-color: var(--whiteC);
+}
+
+
+
+
+*{
+    font-family:'Spectral', serif ;
+   
+}
+
+
+
+/* font della pagina */
+body{
+    overflow-x: hidden;
+    background-color: var(--primo);
+}
+
+.headerCustom{
+    background-image:linear-gradient(  rgba(192, 225, 238, 0), rgba(71, 156, 189, 0.473)), url(./media/immagineNav.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3{
+    font-family: 'Playfair Display', serif; 
+}
+
+/* bottone */
+
+.btnCustom{
+    background-color: var(--secondo);
+    border: solid var(--terzo) 2px;
+
+}
+
+.btnCustom:hover{
+    background-color: var(--whiteC);
+
+    border: solid var(--terzo) 2px;
+    
+}
+
+/* logo */
+.navLogo{
+    width: 50px;
+}
+#mainNavbar{
+    transition: 0.7s;
+    height: 60px;
+}
+
+
+#logoMagic{
+    transition: 0.6s;
+}
+h1{
+    color: gold;
+}
+
+
+.incrementoNumbers{
+    font-size: 100px;
+    color: var(--blackC);
+
+}
