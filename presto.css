@@ -2,9 +2,9 @@
 /* palette di colori */
 :root{
 
---primo : #1c85b5;
+--primo : rgb(28, 133, 181);
 --secondo :rgb(71, 155, 189);
---terzo : #2f627c;
+--terzo : rgb(47, 98, 124);
 --blackC :#030d11;
 --whiteC : rgb(192, 225, 238);
 }
@@ -38,15 +38,22 @@
 
 /* font della pagina */
 body{
+  
     overflow-x: hidden;
-    background-color: var(--primo);
-}
-
-.headerCustom{
-    background-image:linear-gradient(  rgba(192, 225, 238, 0), rgba(71, 156, 189, 0.473)), url(./media/immagineNav.png);
+    background-image: url(./media/sfondocerchi.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.headerCustom{
+    background-image:linear-gradient(  rgba(192, 225, 238, 0.822), rgba(71, 156, 189, 0.192)), url(./media/robot.png);
+    background-size: cover;
+    background-position: center;
+    
+ 
+   
+}
+
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3{
     font-family: 'Playfair Display', serif; 
@@ -69,7 +76,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3{
 
 /* logo */
 .navLogo{
-    width: 50px;
+    width: 20px;
 }
 #mainNavbar{
     transition: 0.7s;
@@ -81,7 +88,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3{
     transition: 0.6s;
 }
 h1{
-    color: gold;
+    color: var(--terzo);
+}
+h2{
+    color: var(--primo);
 }
 
 
@@ -90,3 +100,27 @@ h1{
     color: var(--blackC);
 
 }
+
+.swiper {
+    width: 600px;
+    height: 300px;
+  }
+
+
+  #arrowC{
+    color: #030d11;
+  }
+  .card-custom{
+    height: 200px;
+    width: 300px;
+    background-image: url(./media/sfondocerchi.png);
+    background-size: contain;
+
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+     
+    flex-direction: column; 
+    justify-content: center;
+     border: solid var(--primo);      
+  }

@@ -43,7 +43,7 @@ window.addEventListener('scroll', ()=>{
         mainNavbar.classList.remove('bg-transparent');
         mainNavbar.classList.add('background-primo');
 
-        mainNavbar.style.height = '100px';
+        
         
         logoB.classList.remove('d-none');
         logoA.classList.add('d-none');
@@ -53,7 +53,7 @@ window.addEventListener('scroll', ()=>{
         mainNavbar.classList.remove('background-primo');
         mainNavbar.classList.add('bg-transparent');
 
-        mainNavbar.style.height = '60px';
+        
         
         logoB.classList.add('d-none');     
         logoA.classList.remove('d-none');
@@ -120,3 +120,60 @@ let observed = new IntersectionObserver(
 )  
 
 observed.observe(h2Test);
+
+
+// swiper
+
+const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    direction: 'vertical',
+    loop: true,
+  
+  
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  
+  
+  });
+
+
+
+  let reviews = [
+
+    {name : 'Marco', quote : 'sito non male '},
+    {name : 'Emma', quote : 'sito ottimo '},
+    {name : 'Delia', quote : 'si può fare di più '},
+    {name : 'Manuel', quote : 'sito da migliorare '},
+
+];
+
+
+let swiperWrapper = document.querySelector('.swiper-wrapper');
+
+
+reviews.forEach( (recensione)=> {
+
+    let div = document.createElement('div');
+    div.classList.add('swiper-slide' , 'd-flex' ,'justify-content-center' ,'align-items-center');
+
+    div.innerHTML = `
+    
+    <div class="card-custom text-center">
+       <h3>${recensione.name}</h3>
+       <p>${recensione.quote}</p>
+    </div>
+    
+    `;
+
+    swiperWrapper.appendChild(div);
+
+})
+
+
+
+  
+
