@@ -31,8 +31,7 @@ logoMagic.addEventListener('click', ()=> {
 
 
  let mainNavbar = document.querySelector('#mainNavbar');
- let logoA = document.querySelector('#logoA')
- let logoB = document.querySelector('#logoB')
+
 
 
 
@@ -43,7 +42,7 @@ window.addEventListener('scroll', ()=>{
         mainNavbar.classList.remove('bg-transparent');
         mainNavbar.classList.add('background-primo');
 
-        mainNavbar.style.padding = '20px 0px';
+       
         
         logoB.classList.remove('d-none');
         logoA.classList.add('d-none');
@@ -53,7 +52,7 @@ window.addEventListener('scroll', ()=>{
         mainNavbar.classList.remove('background-primo');
         mainNavbar.classList.add('bg-transparent');
 
-        mainNavbar.style.padding = '10px 0px';
+       
         
         logoB.classList.add('d-none');     
         logoA.classList.remove('d-none');
@@ -126,9 +125,13 @@ observed.observe(h2Test);
 
 const swiper = new Swiper('.swiper', {
     // Optional parameters
-    direction: 'vertical',
+    direction: 'horizontal',
     loop: true,
-  
+   
+    autoplay: {
+        delay: 1000,
+        disableOnInteraction: false,
+      },
   
   
     // Navigation arrows
@@ -174,6 +177,51 @@ reviews.forEach( (recensione)=> {
 })
 
 
+let robots = document.querySelectorAll('.fa-solid fa-robot fa-2x');
+let columns = document.querySelectorAll('.col-custom');
+
+let columnsConfirm = false;
+
+columns.forEach( (colonna, i)=>{
+
+
+
+   
+        colonna.addEventListener('mouseenter', ()=>{
+
+        if(columnsConfirm == false){
+
+        
+            camioncini[i].classList.remove('text-secondaryC');
+            camioncini[i].classList.add('text-primo');
+    
+        camioncini[i].classList.remove('text-blackC');
+
+        } else {
+
+               camioncini[i].classList.remove('text-blackC'); 
+}});
+                 
+
+ 
 
   
 
+        colonna.addEventListener('mouseleave', ()=>{
+
+            if(columnsConfirm == false){
+    
+                camioncini[i].classList.remove('text-accentC');
+                camioncini[i].classList.add('text-blackC');
+    
+        
+                camioncini[i].classList.add('text-secondo');             
+                columnsConfirm = true;
+              
+            } else {
+      
+                camioncini[i].classList.add('text-secondo'); 
+                columnsConfirm = false;
+    
+            } 
+        });
