@@ -34,15 +34,19 @@
    
 }
 
+.imgCustom{
 
+background-image: url(./media/robotpacchi2-removebg-preview.png);
+
+}
 
 /* font della pagina */
 body{
-  
+  width: 100%;
     overflow-x: hidden;
     background-image: url(./media/sfondocerchi.png);
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-size: contain;
+    
 }
 
 .headerCustom{
@@ -88,10 +92,13 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3{
     transition: 0.6s;
 }
 h1{
+    
     color: var(--terzo);
 }
+
 h2{
-    color: var(--primo);
+    color:var(--blackC);
+    font-size: 30px;
 }
 
 
@@ -99,11 +106,12 @@ h2{
     font-size: 100px;
     color: var(--blackC);
 
+
 }
 
 .swiper {
-    width: 600px;
-    height: 300px;
+    width: 350px;
+    height: 250px;
   }
 
 
@@ -111,12 +119,12 @@ h2{
     color: #030d11;
   }
   .card-custom{
-    height: 200px;
-    width: 300px;
+    height: 150px;
+    width: 250px;
     background-image: url(./media/sfondocerchi.png);
     background-size: contain;
 
-    border-radius: 50%;
+    border-radius: 30%;
     display: flex;
     align-items: center;
      
@@ -124,3 +132,31 @@ h2{
     justify-content: center;
      border: solid var(--primo);      
   }
+
+  .fontP{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+    color: darkgoldenrod;
+  }
+
+
+  .col-custom{
+    width: 200px;
+    height: 200px;
+    background-color: var(--secondo);
+    border-radius: 70%;
+    transition: 0.4s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.col-custom:hover{
+    transform: scale(1.2);
+    color: var(--whiteC);
+    background-color: var(--terzo);
+
+}

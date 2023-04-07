@@ -26,7 +26,7 @@
         <a class="navbar-brand " id="logoB" href="#"><img class="navLogo"  src="./media/logoA.png" alt=""></a>
         <a class="navbar-brand d-none " id="logoA" href="#"><img class="navLogo"  src="./media/logoB.png" alt=""></a>
         
-        <button class="navbar-toggler fixed-left-top" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa-solid fa-wand-magic-sparkles" id="logoMagic"></i>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -47,7 +47,7 @@
   </nav>
 
   <header class="container-fluid ">
-    <div class="row vh-100  align-items-center headerCustom ">
+    <div class="row vh-100 align-items-center headerCustom ">
         <div class="col-12 text-center d-flex justify-content-center">
             <h1 data-aos="fade-left" class="display-1 text-center fw-bold ">PRESTO</h1>
             <h2 data-aos="fade-left" class="display-1 text-center fw-bold ">.IT</h2>
@@ -58,14 +58,15 @@
   <section class="container ">
     <div class="row">
         <div class="col-12 col-md-6 ">
-            <img data-aos="fade-right" src="./media/robotpacchi2-removebg-preview.png" alt="immagine corriere">
+            <img  data-aos="fade-right" src="./media/robotpacchi2-removebg-preview.png" width="300px" height="500" alt="immagine corriere">
         </div>
         <div class="col-12 col-md-6">
             <h2 id="h2Test" class="text-center">Un po' di numeri</h2>
-            <p><span id= "first-span" class="incrementoNumbers">0</span> Clienti soddisfatti</p>
-            <p><span id= "second-span" class="incrementoNumbers">0</span> Prodotti venduti</p>
-            <p><span id= "third-span" class="incrementoNumbers">0</span> Recensioni</p>
-
+            <div class="text-center">
+                <p class="fontP"><span id= "first-span" class="incrementoNumbers">0</span> Clienti soddisfatti</p>
+                <p class="fontP"><span id= "second-span" class="incrementoNumbers">0</span> Prodotti venduti</p>
+                <p class="fontP"><span id= "third-span" class="incrementoNumbers">0</span> Recensioni</p>
+            </div>
 
         </div>
     </div>
@@ -73,7 +74,7 @@
    
 <!-- swiper -->
 <!-- Slider main container -->
-      <div class="swiper">
+      <div class="swiper col-12 col-md-12">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
               <!-- Slides -->
@@ -89,7 +90,46 @@
             
       </div>
 
+      <div id="mouseEnter" class="divVuoti">
 
+      </div>
+      <section class="container-fluid  my-5 py-5" >
+  
+        <div class="container">
+  
+          <div class="row justify-content-evenly">
+  
+          <h2 class="display-3 text-center">Spedizioni</h2>
+  
+            <div class="col-12 col-md-3 col-custom my-3">
+  
+              <i class="fa-solid fa-robot fa-2x" style="color: #1c85b5;"></i>
+              <h3>Lorem Ipsum</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+  
+            </div>
+  
+            <div class="col-12 col-md-3 col-custom my-3">
+  
+              <i class="fa-solid fa-robot fa-2x" style="color: #1c85b5;"></i>
+              <h3>Lorem Ipsum</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+  
+            </div>
+  
+            <div class="col-12 col-md-3 col-custom my-3">
+  
+              <i class="fa-solid fa-robot fa-2x" style="color: #1c85b5;"></i>
+              <h3>Lorem Ipsum</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+  
+            </div>
+  
+          </div>
+  
+        </div>
+  
+      </section>
 
 
 

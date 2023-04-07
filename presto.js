@@ -43,7 +43,7 @@ window.addEventListener('scroll', ()=>{
         mainNavbar.classList.remove('bg-transparent');
         mainNavbar.classList.add('background-primo');
 
-        
+        mainNavbar.style.padding = '20px 0px';
         
         logoB.classList.remove('d-none');
         logoA.classList.add('d-none');
@@ -53,7 +53,7 @@ window.addEventListener('scroll', ()=>{
         mainNavbar.classList.remove('background-primo');
         mainNavbar.classList.add('bg-transparent');
 
-        
+        mainNavbar.style.padding = '10px 0px';
         
         logoB.classList.add('d-none');     
         logoA.classList.remove('d-none');
@@ -162,7 +162,7 @@ reviews.forEach( (recensione)=> {
 
     div.innerHTML = `
     
-    <div class="card-custom text-center">
+    <div class="card-custom text-center ">
        <h3>${recensione.name}</h3>
        <p>${recensione.quote}</p>
     </div>
