@@ -127,30 +127,29 @@ const swiper = new Swiper('.swiper', {
     // Optional parameters
     direction: 'horizontal',
     loop: true,
-   
-    autoplay: {
-        delay: 1000,
-        disableOnInteraction: false,
-      },
-  
-  
+
+
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+
     // Navigation arrows
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-  
-  
-  });
 
+   
+  });
 
 
   let reviews = [
 
-    {name : 'Marco', quote : 'sito non male '},
-    {name : 'Emma', quote : 'sito ottimo '},
-    {name : 'Delia', quote : 'si può fare di più '},
-    {name : 'Manuel', quote : 'sito da migliorare '},
+    {name : 'Marco', quote : 'sito non male', vote : 4  },
+    {name : 'Emma', quote : 'sito ottimo', vote : 5  },
+    {name : 'Delia', quote : 'si può fare di più', vote : 3  },
+    {name : 'Manuel', quote : 'sito da migliorare', vote : 3  },
 
 ];
 
@@ -168,60 +167,90 @@ reviews.forEach( (recensione)=> {
     <div class="card-custom text-center ">
        <h3>${recensione.name}</h3>
        <p>${recensione.quote}</p>
-    </div>
     
+    
+       <div class="d-flex">
+       ${createStars(recensione.vote)}
+       </div>
+    </div>
+
+
+
     `;
 
     swiperWrapper.appendChild(div);
 
-})
+});
 
 
-let robots = document.querySelectorAll('.fa-solid fa-robot fa-2x');
+
+function createStars(fullStars){
+
+
+    let final = '';
+
+    for(let i = 1; i <=5; i++){
+
+      if(fullStars >= i){
+
+        final += `<i class="fa-solid fa-star"></i>`;
+
+      } else {
+
+
+        final += `<i class="fa-regular fa-star"></i>`;
+      }
+
+    }
+
+    return final;
+
+  };
+
+
+
+let robots = document.querySelectorAll('.fa-robot');
 let columns = document.querySelectorAll('.col-custom');
 
 let columnsConfirm = false;
 
 columns.forEach( (colonna, i)=>{
 
+    colonna.addEventListener('mouseenter', ()=>{
+
+      if(columnsConfirm == false){
+
+        robots[i].classList.remove('text-primo');
+        robots[i].classList.add('text-whiteC');
 
 
+      } else {
+
+        robots[i].classList.remove('text-blakC');
+     
+    }
+
+    })
    
-        colonna.addEventListener('mouseenter', ()=>{
+    colonna.addEventListener('maouseleave', ()=>{
 
-        if(columnsConfirm == false){
+     if(columnsConfirm == false){
 
-        
-            camioncini[i].classList.remove('text-secondaryC');
-            camioncini[i].classList.add('text-primo');
-    
-        camioncini[i].classList.remove('text-blackC');
+        robots[i].classList.remove('text-whiteC');
+        robots[i].classList.add('text-blackC');
 
-        } else {
+        columnsConfirm = true;
 
-               camioncini[i].classList.remove('text-blackC'); 
-}});
-                 
+     } else {
 
- 
+        robots[i].classList.remove('text-blackC')
+        robots[i].classList.add('text-primo');
 
-  
+        columnsConfirm = false;
 
-        colonna.addEventListener('mouseleave', ()=>{
+     }
+         
+         
+    })
 
-            if(columnsConfirm == false){
-    
-                camioncini[i].classList.remove('text-accentC');
-                camioncini[i].classList.add('text-blackC');
-    
-        
-                camioncini[i].classList.add('text-secondo');             
-                columnsConfirm = true;
-              
-            } else {
-      
-                camioncini[i].classList.add('text-secondo'); 
-                columnsConfirm = false;
-    
-            } 
-        });
+});

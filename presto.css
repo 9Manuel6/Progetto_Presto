@@ -26,7 +26,21 @@
     background-color: var(--whiteC);
 }
 
-
+.text-primo{
+   color: var(--primo);
+}
+.text-secondo{
+    color: var(--secondo);
+}
+.text-terzo{
+    color: var(--terzo);
+}
+.text-blackC{
+    color: var(--blackC);
+}
+.text-whiteC{
+    color: var(--whiteC);
+}
 
 
 *{
@@ -50,7 +64,7 @@ body{
 }
 
 .headerCustom{
-    background-image:linear-gradient(  rgba(192, 225, 238, 0.822), rgba(71, 156, 189, 0.192)), url(./media/robot.png);
+    background-image:linear-gradient( rgba(113, 133, 185, 0.425), rgba(113, 201, 223, 0.575)), url(./media/robot.png);
     background-size: cover;
     background-position: center;
     
@@ -121,7 +135,7 @@ h2{
   .card-custom{
     height: 150px;
     width: 250px;
-    background-image: url(./media/sfondocerchi.png);
+    background-image: linear-gradient(rgb(113, 133, 185), rgb(113, 201, 223)), url(./media/sfondocerchi.png);
     background-size: contain;
 
     border-radius: 30%;
@@ -154,9 +168,9 @@ h2{
 
 }
 
-.col-custom:hover{
+ .col-custom:hover{
     transform: scale(1.2);
     color: var(--whiteC);
     background-color: var(--terzo);
 
-}
+} 
