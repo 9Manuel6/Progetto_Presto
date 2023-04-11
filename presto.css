@@ -64,7 +64,7 @@ body{
 }
 
 .headerCustom{
-    background-image:linear-gradient( rgba(113, 133, 185, 0.425), rgba(113, 201, 223, 0.575)), url(./media/robot.png);
+    background-image:linear-gradient( rgba(113, 133, 185, 0.116), rgba(113, 201, 223, 0.205)), url(./media/robotpresto.png);
     background-size: cover;
     background-position: center;
     
@@ -107,7 +107,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3{
 }
 h1{
     
-    color: var(--terzo);
+    color: var(--blackC);
 }
 
 h2{
@@ -152,6 +152,7 @@ h2{
     font-size: 15px;
     color: darkgoldenrod;
   }
+ 
 
 
   .col-custom{
