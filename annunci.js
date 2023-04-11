@@ -103,9 +103,9 @@ fetch('./annunci.json').then( (response)=> response.json() ).then( (data)=> {
     
             div.innerHTML = `
             
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="All" checked>
-                    <label class="form-check-label" for="All">
-                    tutte le Categorie
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="${category}" checked>
+                    <label class="form-check-label" for="${category}">
+                    ${category}
                     </label>    
                     
             `;
@@ -121,12 +121,9 @@ fetch('./annunci.json').then( (response)=> response.json() ).then( (data)=> {
         setCategoryFilters();
 
         function showCards(array){
-
-            // svuotamento wrapper
+           
             cardsWrapper.innerHTML = '';
-        
-            // metto le card in ordine decrescente
-            
+         
             array.sort((a, b) => Number(b.price - a.price));
         
         
