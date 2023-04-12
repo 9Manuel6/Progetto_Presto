@@ -2,11 +2,11 @@
 /* palette di colori */
 :root{
 
---primo : rgb(28, 133, 181);
---secondo :rgb(71, 155, 189);
---terzo : rgb(47, 98, 124);
+--primo : rgb(79, 77, 192);
+--secondo :rgb(79, 77, 192);
+--terzo : rgb(85, 116, 161);
 --blackC :#030d11;
---whiteC : rgb(192, 225, 238);
+--whiteC : rgb(57, 100, 163);
 }
 
 
@@ -50,7 +50,7 @@
 
 .imgCustom{
 
-background-image: url(./media/robotpacchi2-removebg-preview.png);
+background-image: url(./media/astronautaPacchi.png);
 
 }
 
@@ -58,13 +58,15 @@ background-image: url(./media/robotpacchi2-removebg-preview.png);
 body{
   width: 100%;
     overflow-x: hidden;
-    background-image: url(./media/sfondocerchi.png);
+    background-image: url(./media/galassia.jpg);
     background-size: contain;
+   
+   
     
 }
 
 .headerCustom{
-    background-image:linear-gradient( rgba(113, 133, 185, 0.116), rgba(113, 201, 223, 0.205)), url(./media/robotpresto.png);
+    background-image:linear-gradient( rgba(113, 133, 185, 0.116), rgba(5, 26, 43, 0.26)), url(./media/sistemaSolare.png);
     background-size: cover;
     background-position: center;
     
@@ -107,18 +109,18 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3{
 }
 h1{
     
-    color: var(--blackC);
+    color: var(--primo);
 }
 
 h2{
-    color:var(--blackC);
+    color:var(--primo);
     font-size: 30px;
 }
 
 
 .incrementoNumbers{
     font-size: 100px;
-    color: var(--blackC);
+    color: aliceblue;
 
 
 }
@@ -130,13 +132,14 @@ h2{
 
 
   #arrowC{
-    color: #030d11;
+    color: #45829b;
   }
   .card-custom{
     height: 150px;
     width: 250px;
-    background-image: linear-gradient(rgb(113, 133, 185), rgb(113, 201, 223)), url(./media/sfondocerchi.png);
+    background-image: linear-gradient(rgb(62, 75, 109), rgb(47, 98, 110));
     background-size: contain;
+    color: aliceblue;
 
     border-radius: 30%;
     display: flex;
@@ -144,13 +147,14 @@ h2{
      
     flex-direction: column; 
     justify-content: center;
-     border: solid var(--primo);      
+     border: solid var(--primo); 
+
   }
 
   .fontP{
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 15px;
-    color: darkgoldenrod;
+    color: white;
   }
  
 
@@ -166,12 +170,13 @@ h2{
     align-items: center;
     justify-content: center;
     text-align: center;
+    color: rgba(240, 248, 255, 0.685);
 
 }
 
  .col-custom:hover{
     transform: scale(1.2);
-    color: var(--whiteC);
+    color: var(--secondo);
     background-color: var(--terzo);
 
 } 
@@ -233,7 +238,7 @@ h2{
    height: 100px;
    width: 100px;
    border-radius: 50%;
-   border: 2px solid var(--secondo);
+   border: 2px solid white;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -250,7 +255,7 @@ h2{
     height: 80px;
     width: 80px;
     border-radius: 50%;
-    border: 2px solid var(--secondo);
+    border: 2px solid white;
     position: absolute;
     background-color:var(--terzo);
    
@@ -267,7 +272,7 @@ h2{
 width: 250px;
 height: 250px;
 border-radius: 30px;
-border: 2px solid var(--blackC); 
+border: 2px solid white; 
 
 box-shadow: 5px, 0px, 0px, 5px var(--secondo) ;
 
