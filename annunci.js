@@ -1,11 +1,11 @@
 
-let navIcon = document.querySelector('#navIcon');
+let logoMagic = document.querySelector('#logoMagic');
 
 
 let confirm = false;
 
 
-navIcon.addEventListener('click', ()=>{
+logoMagic.addEventListener('click', ()=>{
 
 
     if(confirm == false){
@@ -137,6 +137,9 @@ fetch('./annunci.json').then( (response)=> response.json() ).then( (data)=> {
                 div.innerHTML = `
                 
                                 <div class="announcement-card text-center">
+                                    
+                                    <img class = "img-card-custom" src="https://picsum.photos/${200 + i}" alt="">
+                                   
                                     <p class="h3">${element.name}</p>
                                     <h3>${element.category}</h3>
                                     <h3>${element.price} €</h3>
@@ -158,18 +161,32 @@ fetch('./annunci.json').then( (response)=> response.json() ).then( (data)=> {
         
             // funzione filtra per categoria, mostra cards (al click sul radio button)
         
-            function filterbyCategory(categoria){
+            function filterbyCategory(array){
         
+            //  let categoria = Array.from(checkInputs).find((button)=> button.checked).id;
+
+             let arrayFromNodeList = Array.from(checkINputs);
+
+             let button = arrayFromNodeList.find((bottone)=> bottone.checked);
+
+             let categoria = button.id;
+
+             
+
+
+
+
+
         
                 if(categoria != 'All'){
         
-                    let filtered = data.filter( (annuncio)=> annuncio.category == categoria );
+                    let filtered = array.filter( (annuncio)=> annuncio.category == categoria );
         
-                    showCards(filtered);
+                    return(filtered);
         
                 } else {
         
-                    showCards(data);
+                    return(data);
         
                 }
         
@@ -186,7 +203,7 @@ fetch('./annunci.json').then( (response)=> response.json() ).then( (data)=> {
         
                 checkInput.addEventListener('click', ()=>{
         
-                    filterbyCategory(checkInput.id);
+                   globalFilter();
         
                 })
         
@@ -216,21 +233,24 @@ fetch('./annunci.json').then( (response)=> response.json() ).then( (data)=> {
         
             setInputPrice();
         
-            function filterbyPrice(prezzo){
+            function filterbyPrice(array){
         
-                let filtered = data.filter( (annuncio)=> Number(annuncio.price <= prezzo) );        
+                let filtered = array.filter( (annuncio)=> Number(annuncio.price <= Math.ceil(inputPrice.value)) );        
         
-                showCards(filtered);
+
+               return(filtered);
         
             }
         
           
         
             inputPrice.addEventListener('input', ()=>{
-        
-                filterbyPrice(inputPrice.value);
-        
+                
+                
                 incrementNumber.innerHTML = inputPrice.value;
+               
+                globalFilter();
+        
         
         
             } )
@@ -238,21 +258,54 @@ fetch('./annunci.json').then( (response)=> response.json() ).then( (data)=> {
            
         
             let wordInput = document.querySelector('#wordInput');        
-            function filterbyWord(nome){
+            function filterbyWord(array){
         
-                let filtered = data.filter ( (annuncio)=> annuncio.name.toLowerCase().includes(nome.toLowerCase()) );
+                let nome = wordInput.value;
+                              
+                let filtered = array.filter ( (annuncio)=> annuncio.name.toLowerCase().includes(nome.toLowerCase()) );
         
-                showCards(filtered);
-        
+               return(filtered);
+            
             }
         
            
             wordInput.addEventListener('input', ()=>{
         
-                filterbyWord(wordInput.value);
+              globalFilter();
         
             })
 
 
-    })
+            // filtro supremo
+
+            function globalFilter(){
+
+                let filteredByCategory = filterbyCategory(data);
+
+                let filteredByPride = filterbyPrice(filteredByCategory);
+
+                let filteredByWord = filterbyWord(filteredByPride);
+
+
+                showCards(filteredByWord);
+
+
+
+            }
+
+
+    });
    
+
+ 
+
+
+  
+
+
+
+
+
+
+        
+    

@@ -20,7 +20,7 @@
 
 <!-- navbar -->
 <nav id="mainNavbar" class=" navbar navbar-expand-lg bg-transparent fixed-top">
-    <div class="container-fluid">
+    <div class="container-fluid  ">
 
 
         <a class="navbar-brand " id="logoB" href="#"><img class="navLogo"  src="./media/logoA.png" alt=""></a>
@@ -52,93 +52,41 @@
   <header class="container-fluid ">
     <div class="row vh-100 align-items-center headerCustom ">
         <div class="col-12 text-center d-flex justify-content-center">
-            <h1 data-aos="fade-left" class="display-1 text-center fw-bold ">Annunci</h1>           
+            <h1 data-aos="fade-left" class="display-1 text-center fw-bold ">Chi</h1>
+            <h2 data-aos="fade-left" class="display-1 text-center fw-bold ">Siamo</h2>
         </div>
     </div>
   </header>
 
+   
+<section class="container-fluid">
+        
+    <div class="row vh-100 justify-content-center mx-5" >
+        <h2 class="text-center fs-4">I nostri pianeti vicini</h2>
+            <div class="col-12 col-md-6 align-items-center justify-content-center my-5">
+               <div class="circle">
+                <div class="opener">
+                    
+                    <i class="fa-solid fa-user-astronaut fa-3x"></i>
 
-  <section class="container-fluid my-5">
-    <div class="row">
-
-        <h2>Filtra per:</h2>
-
-        <div class="col-12 col-md-3">
-            <div class="accordion accordion-flush" id="accordionFlushExample">
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-3" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                     Categoria
-                    </button>
-                  </h2>
-                  <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                    <!-- filtro per categoria -->
-                    <div id="categoryWrapper" class="accordion-body">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="All" checked>
-                            <label class="form-check-label" for="All">
-                              Tutte le categorie
-                            </label>
-                          </div>
-                    </div>
-                  </div>
                 </div>
+                    <div class="moved"></div>
+                    <div class="moved"></div>
+                    <div class="moved"></div>
+                    <div class="moved"></div>
 
+               </div>          
+            </div>   
+            
+            <div class="col-12 col-md-6 align-items-center justify-content-center my-5">            
+              <div id="cardsWrapper">
+            
 
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-3" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                      Prezzo
-                    </button>
-                  </h2>
-                  <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">                   
-                    <div class="accordion-body">
-                        <div>
-                            <span class="inputNumber">
-                                0 €
-                            </span>                           
-                         <input id="inputPrice" type="range" class="w-100">
-                            <span id="incrementNumber" class="inputNumber">
-                                0
-                            </span>
-                            <span class="inputNumber"> €</span>                       
-                        </div>
-                    </div>
-                  </div>
-                </div>
-
-
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-3" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                      Parola
-                    </button>
-                  </h2>
-                  <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">                  
-                    <div class="accordion-body">
-
-                        <input type="text" placeholder="Cerca il prodotto" id="wordInput">
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-        </div>
-
-        <div class="col-12 col-md-9">
-            <div id="cardsWrapper" class="row">
-            </div>               
-        </div>
+              </div>           
+            </div>
     </div>
 </section>
-
-            
- 
-
     
-
-
-
 
 
       <footer class="container-fluid mt-5 py-5 background-secondo text-blackC">
@@ -189,36 +137,16 @@
   
         </div>
   
-      </footer> 
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
+      </footer>
 
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>  
-<script>
-  AOS.init();
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-<script src="./annunci.js"></script>
+    <script>
+      AOS.init();
+  </script>  
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>   
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="./chiSiamo.js"></script>
 
 </body>
 </html>
