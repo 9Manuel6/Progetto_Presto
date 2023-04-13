@@ -11,12 +11,12 @@ logoMagic.addEventListener('click', ()=>{
 
     if(confirm == true){
 
-        logoMagic.classList.remove('fa-rotate-180');
+        logoMagic.classList.remove('fa-rotate-270');
         confirm = false;
     
     } else{
 
-        logoMagic.classList.add('fa-rotate-180');
+        logoMagic.classList.add('fa-rotate-270');
         confirm = true;
 
     }
