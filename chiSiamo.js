@@ -3,21 +3,21 @@
 let logoMagic = document.querySelector('#logoMagic');
 
 
-let confirm = false;
+let confirm = true;
 
 
 logoMagic.addEventListener('click', ()=>{
 
 
-    if(confirm == false){
+    if(confirm == true){
 
-        navIcon.classList.remove('fa-rotate-180');
-        confirm = true;
+        logoMagic.classList.remove('fa-rotate-180');
+        confirm = false;
     
     } else{
 
-        navIcon.classList.add('fa-rotate-180');
-        confirm = false;
+        logoMagic.classList.add('fa-rotate-180');
+        confirm = true;
 
     }
 
@@ -40,7 +40,7 @@ window.addEventListener('scroll', ()=>{
         mainNavbar.classList.remove('bg-transparent');
         mainNavbar.classList.add('background-primaryC');
       
-        mainNavbar.style.padding = '20px 0px';
+       
 
         logoB.classList.remove('d-none');
         logoA.classList.add('d-none');
@@ -52,7 +52,7 @@ window.addEventListener('scroll', ()=>{
         mainNavbar.classList.remove('background-primaryC');
         mainNavbar.classList.add('bg-transparent');
 
-        mainNavbar.style.padding = '10px 0px';
+       
 
         logoA.classList.remove('d-none');
         logoB.classList.add('d-none');
@@ -64,126 +64,123 @@ window.addEventListener('scroll', ()=>{
 
 
 
+let opener = document.querySelector('.opener');
 
-
-let opener = document.querySelector('#opener');
-
-let movedDivs = document.querySelectorAll('#moved');
+let movedDivs = document.querySelectorAll('.moved');
 
 let conferma = false;
 
-
-// array pianeti
-
 let galaxy = [
 
-
-    // ci va url
-
-
-   { name : 'Terra', distanzaDalSole : '150 milioni di chilometri ', url : './media/terra.jpg'},
-   { name : 'Luna', distanzaDalSole : ' 384400 km dalla Terra', url : './media/luna.jpg'},
-   { name : 'Marte', distanzaDalSole : '228 milioni di chilometri', url : './media/marte.jpg'},
-   { name : 'Saturno', distanzaDalSole : 'un miliardo e 429 milioni di Km', url : './media/Saturno.jpg'},
+    { name : 'Mercurio', distanzaDalSole : '58 milioni di km', url : './media/mercurio.jpg'},
+    { name : 'Venere', distanzaDalSole : ' 108.200.000 km ', url : './media/venere.jpg'},
+    { name : 'Terra', distanzaDalSole : '150 milioni di chilometri ', url : './media/terra.jpg'},
+    { name : 'Luna', distanzaDalSole : 'circa 150 milioni di km', url : './media/luna.jpg'},
+    { name : 'Marte', distanzaDalSole : '228 milioni di chilometri', url : './media/marte.jpg'},
+    { name : 'Giove', distanzaDalSole : '777 milioni di chilometri', url : './media/giove.jpg'},
+    { name : 'Saturno', distanzaDalSole : 'un miliardo e 429 milioni di Km', url : './media/saturno.jpg'},  
+    { name : 'Urano', distanzaDalSole : '2.800 milioni di km', url : './media/urano.jpg'},
+    { name : 'Nettuno', distanzaDalSole : '4.504 milioni di Km', url : './media/nettuno.jpg'},
 
 ]
 
-
-let cardWrapper = document.querySelector ('#cardWrapper');
-
-
+// cattura cardWrapper
+let cardWrapper = document.querySelector('#cardWrapper');
 
 
-movedDivs.forEach((moved)=>{
+movedDivs.forEach((moved, i)=>{
 
 
-    moved.style.backGroundImage = `url('${galaxy[i].url}')`;
+    moved.style.backgroundImage = `url('${galaxy[i].url}')`;
+
+    // evento click per far apparire gli amici docenti
+
+    moved.addEventListener('click', ()=>{
 
 
-   moved.addEventListener('click', () =>{
+        // console.log(galaxy[i]);
 
-    
-    cardWrapper.innerHTML = '';
-
-    let div = document.createElement('div');
-
-    div.classList.add('galaxy-card');
-
-    div.innerHTML = `
-    
-                    <p class="h3">${galaxy[i].name}</p>
-                    <p>${galaxy[i].distanzaDalSole}</p>
-    
-    `;
-
-    cardWrapper.appendChild(div);
-
-
-    let card = document.querySelector('.galaxy-card');
-
-    card.style.backGroundImage = `url(${galaxy[i].url})`;
-
-
-
-
-
-
-   })
-
-
-
-
-
-
-
-
-})
-
-
-
-opener.addEvenListener('click', ()=>{
+        cardWrapper.innerHTML = '';
 
      
-    if( conferma == false){
+        let div = document.createElement('div');
+        
+        div.classList.add('teacher-card');
+
+        div.innerHTML = `
+                    <p class="h3">${galaxy[i].name}</p>
+                    <p>${galaxy[i].distanzaDalSole}</p>
+        `;
+
+        cardWrapper.appendChild(div);
+
+
+        // catturo la singola card per cambiare immagine
+
+            let card = document.querySelector('.teacher-card');
+       
+
+                card.style.backgroundImage=`url('${galaxy[i].url}')`;
+
+                card.setAttribute('data-aos', 'zoom-in');
+                card.setAttribute('data-aos-duration','1500');
+
+
+            })
+            
+
+            
+
+
+ 
+       
+
+    })
+
+
+// evento su opener
+
+opener.addEventListener('click', ()=>{
+
+
+    if(conferma == false){
+
 
         conferma = true;
 
         movedDivs.forEach( (moved, i)=>{
 
-            let angle = (360 * i)/ movedDivs.length;
+            let angle = (360 * i) / movedDivs.length;
     
             moved.style.transform = `rotate(${angle}deg) translate(200px) rotate(-${angle}deg)`;
-    
-            
-             
-         })
-
-
-    }else{
-
-
-       conferma = false;
-
-       cardWrapper.innerHTML = '';
-
-        movedDivs.forEach( (moved, i)=>{
 
            
     
+    
+        })
+
+    } else {
+
+        conferma = false;
+
+        cardWrapper.innerHTML = '';
+
+        movedDivs.forEach( (moved)=>{
+
+            // let angle = (360 * i) / movedDivs.length;
+    
             moved.style.transform = `rotate(0deg) translate(0px)`;
+
+            
     
     
-             
-         })
+        })
 
 
     }
 
-
-
-     
-
-
+  
 
 
 })
+

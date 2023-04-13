@@ -2,21 +2,21 @@
 let logoMagic = document.querySelector('#logoMagic');
 
 
-let confirm = false;
+let confirm = true;
 
 
 logoMagic.addEventListener('click', ()=>{
 
 
-    if(confirm == false){
+    if(confirm == true){
 
-        navIcon.classList.remove('fa-rotate-180');
-        confirm = true;
+        logoMagic.classList.remove('fa-rotate-180');
+        confirm = false;
     
     } else{
 
-        navIcon.classList.add('fa-rotate-180');
-        confirm = false;
+        logoMagic.classList.add('fa-rotate-180');
+        confirm = true;
 
     }
 
@@ -103,7 +103,7 @@ fetch('./annunci.json').then( (response)=> response.json() ).then( (data)=> {
     
             div.innerHTML = `
             
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="${category}" checked>
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="${category}">
                     <label class="form-check-label" for="${category}">
                     ${category}
                     </label>    
@@ -127,7 +127,7 @@ fetch('./annunci.json').then( (response)=> response.json() ).then( (data)=> {
             array.sort((a, b) => Number(b.price - a.price));
         
         
-            array.forEach( (element)=>{
+            array.forEach( (element , i)=>{
         
         
                 let div = document.createElement('div');
@@ -165,7 +165,7 @@ fetch('./annunci.json').then( (response)=> response.json() ).then( (data)=> {
         
             //  let categoria = Array.from(checkInputs).find((button)=> button.checked).id;
 
-             let arrayFromNodeList = Array.from(checkINputs);
+             let arrayFromNodeList = Array.from(checkInputs);
 
              let button = arrayFromNodeList.find((bottone)=> bottone.checked);
 

@@ -125,17 +125,14 @@ h2{
 
 }
 
-.swiper {
-    width: 350px;
-    height: 250px;
-  }
+
 
 
   #arrowC{
     color: #45829b;
   }
   .card-custom{
-    height: 150px;
+    height: 100%;
     width: 250px;
     background-image: linear-gradient(rgb(62, 75, 109), rgb(47, 98, 110));
     background-size: contain;
@@ -246,6 +243,7 @@ h2{
 
    z-index: 1;
    cursor: pointer;
+   background-color: rgba(0, 0, 0, 0.644);
 
 
 
@@ -257,32 +255,41 @@ h2{
     border-radius: 50%;
     border: 2px solid white;
     position: absolute;
-    background-color:var(--terzo);
+    background-color:var(--blackC);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    
    
     transition: 1s;
     
-    /* mettere l immagine */
-    background-image: url();
+    
+    
     cursor: pointer;
 }
 
 
-.galaxy-card{
+.teacher-card{
 
-width: 250px;
-height: 250px;
-border-radius: 30px;
-border: 2px solid white; 
+    height: 350px ;
+    width: 250px ;
+    color: white;
 
-box-shadow: 5px, 0px, 0px, 5px var(--secondo) ;
+    border-radius: 20px;
+    border: 2px solid var(--secondary);
 
-background-size: contain ;
-background-repeat: no-repeat;
-background-position: center;
+    box-shadow: 2px 0px 0px 2px var(--accent);
+   
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
 
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: 2s;
 
 }
+
